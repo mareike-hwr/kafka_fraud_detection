@@ -1,0 +1,10 @@
+# docker-compose.yml
+services:
+  # ... generator here ...
+  detector:
+    build: ./detector
+    environment:
+      KAFKA_BROKER_URL: broker:9092
+      TRANSACTIONS_TOPIC: queueing.transactions
+      LEGIT_TOPIC: streaming.transactions.legit
+      FRAUD_TOPIC: streaming.transactions.fraud
